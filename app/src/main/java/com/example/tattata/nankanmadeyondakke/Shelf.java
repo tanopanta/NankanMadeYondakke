@@ -55,6 +55,9 @@ public class Shelf {
         for(Book book: books) {
             LinearLayout layout = book.getLayout();
             String title = ((TextView)layout.getChildAt(0)).getText().toString().trim();
+            if(title.length() == 0) {
+                continue;
+            }
             int kansu;
             try {
                 kansu = Integer.parseInt(((TextView) layout.getChildAt(1)).getText().toString());
@@ -75,6 +78,7 @@ public class Shelf {
         refresh();
         int i = 0;
         SharedPreferences.Editor editor = pref.edit();
+        editor.clear();
         for(Book book: books) {
             editor.putString("index" + String.valueOf(i), book.toString());
             i++;
