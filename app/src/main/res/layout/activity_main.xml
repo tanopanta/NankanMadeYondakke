@@ -26,7 +26,9 @@
                 android:id="@+id/addButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_input_add" />
+                app:srcCompat="@android:drawable/ic_input_add"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
