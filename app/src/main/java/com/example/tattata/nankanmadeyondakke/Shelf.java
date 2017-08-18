@@ -51,16 +51,17 @@ public class Shelf {
         books.add(new Book(title, kansu, linearLayout));
     }
     public void refresh() {
+        //EditTextの内容をShelfクラスに反映
         ArrayList<Book> newBooks = new ArrayList<>();
         for(Book book: books) {
             LinearLayout layout = book.getLayout();
-            String title = ((TextView)layout.getChildAt(0)).getText().toString().trim();
+            String title = ((EditText)layout.getChildAt(0)).getText().toString().trim();
             if(title.length() == 0) {
                 continue;
             }
             int kansu;
             try {
-                kansu = Integer.parseInt(((TextView) layout.getChildAt(1)).getText().toString());
+                kansu = Integer.parseInt(((EditText) layout.getChildAt(1)).getText().toString());
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 continue;
