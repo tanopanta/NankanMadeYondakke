@@ -3,6 +3,7 @@ package com.example.tattata.nankanmadeyondakke;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.InputType;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -36,7 +37,7 @@ public class Shelf {
     public void addBook(String title, int kansu) {
         LinearLayout linearLayout = new LinearLayout(context);
         EditText titleEdit = new EditText(context);
-        EditText kanEdit = new EditText(context);
+        final EditText kanEdit = new EditText(context);
         kanEdit.setInputType(InputType.TYPE_CLASS_NUMBER);
         titleEdit.setText(title);
         if(kansu != -1) {
@@ -44,6 +45,8 @@ public class Shelf {
         }
         titleEdit.setEms(10);
         kanEdit.setEms(3);
+
+        kanEdit.setSelectAllOnFocus(true);
 
         linearLayout.addView(titleEdit, new LinearLayout.LayoutParams(WC, WC, 2.0f));
         linearLayout.addView(kanEdit, new LinearLayout.LayoutParams(WC, WC, 1.0f));
