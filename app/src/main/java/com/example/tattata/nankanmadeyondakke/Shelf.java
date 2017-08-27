@@ -59,17 +59,16 @@ public class Shelf {
         for(Book book: books) {
             LinearLayout layout = book.getLayout();
             String title = ((EditText)layout.getChildAt(0)).getText().toString().trim();
-            if(title.length() == 0) {
-                continue;
-            }
             int kansu;
             try {
                 kansu = Integer.parseInt(((EditText) layout.getChildAt(1)).getText().toString());
             } catch (NumberFormatException e) {
                 e.printStackTrace();
+                oyaLayout.removeView(layout);
                 continue;
             }
             if(title.length() == 0) {
+                oyaLayout.removeView(layout);
                 continue;
             }
             Book b = new Book(title, kansu, layout);
