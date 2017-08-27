@@ -3,12 +3,9 @@ package com.example.tattata.nankanmadeyondakke;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.InputType;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -17,13 +14,14 @@ import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by tattata on 2017/08/17.
+ * 本棚
  */
 
 public class Shelf {
-    ArrayList<Book> books;
-    SharedPreferences pref;
-    Context context;
-    LinearLayout oyaLayout;
+    private ArrayList<Book> books;
+    private SharedPreferences pref;
+    private Context context;
+    private LinearLayout oyaLayout;
 
     private final int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
     private final int MP = ViewGroup.LayoutParams.MATCH_PARENT;
@@ -86,7 +84,7 @@ public class Shelf {
             editor.putString("index" + String.valueOf(i), book.toString());
             i++;
         }
-        editor.commit();
+        editor.apply();
     }
     public void loadData() {
         Map<String, ?> map = pref.getAll();

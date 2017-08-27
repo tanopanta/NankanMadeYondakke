@@ -7,17 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ImageButton addButton;
-    ImageButton saveButton;
-    ImageButton closeButton;
-    LinearLayout verticalLayout;
-    Shelf shelf;
+    private ImageButton addButton;
+    private ImageButton saveButton;
+    private ImageButton closeButton;
+    private LinearLayout verticalLayout;
+    private Shelf shelf;
 
 
     @Override

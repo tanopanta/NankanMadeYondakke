@@ -4,12 +4,13 @@ import android.widget.LinearLayout;
 
 /**
  * Created by tattata on 2017/08/17.
+ * 本
  */
 
 public class Book {
-    String title;
-    int kansu;
-    LinearLayout layout;
+    private String title;
+    private int kansu;
+    private LinearLayout layout;
     public Book(String data) {
         //読み込み時
         String[] arr = data.split(" ");
