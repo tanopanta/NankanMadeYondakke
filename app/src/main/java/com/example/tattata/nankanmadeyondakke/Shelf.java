@@ -23,8 +23,8 @@ public class Shelf {
     private Context context;
     private LinearLayout oyaLayout;
 
-    private final int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
-    private final int MP = ViewGroup.LayoutParams.MATCH_PARENT;
+    private static final int WC = ViewGroup.LayoutParams.WRAP_CONTENT;
+    private static final int MP = ViewGroup.LayoutParams.MATCH_PARENT;
 
     public Shelf(Context context, LinearLayout oyaLayout) {
         this.context = context;
@@ -90,8 +90,9 @@ public class Shelf {
         Map<String, ?> map = pref.getAll();
         for(int i = 0; i < map.size(); i++) {
             String data = map.get("index" + String.valueOf(i)).toString();
-            String arr[] = data.split(" ");
-            addBook(arr[0], Integer.parseInt(arr[1]));
+            String arr[] = data.split(String.valueOf(0x1f));
+            int kansu =Integer.parseInt(arr[1]);
+            addBook(arr[0], kansu);
         }
     }
 }

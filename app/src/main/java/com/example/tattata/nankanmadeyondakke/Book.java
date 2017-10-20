@@ -28,7 +28,7 @@ public class Book {
     }
     @Override
     public String toString() {
-        return title + " " + String.valueOf(kansu);
+        return title + String.valueOf(0x1f) + String.valueOf(kansu);
     }
     public LinearLayout getLayout() {
         return  this.layout;
